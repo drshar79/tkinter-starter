@@ -31,6 +31,19 @@ menu.add_cascade(label="File2", menu=new_item)
 window.config(menu=menu)
 spin=Spinbox(window, from_=0, to=100, width=5)
 spin.grid(column=0, row=2)
+score = 0
+
+def addToScore():
+  global score
+  score += 1
+  lbl['text'] = score
+# Add a label with the text "Hello"
+lbl = Label(window, text=score, font=("Arial Bold", 50))
+lbl.grid(column=0, row=5)
+
+btn = Button(window, text="Click", command=addToScore)
+btn.grid(column = 0 , row = 1)
+window.mainloop()     # Keep the window open
 def countdown(n):
     while n>0:
         print(n)
